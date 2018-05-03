@@ -30,6 +30,8 @@
 @property (nonatomic,assign) int attempt;
 @property (nonatomic,assign) int skipped;
 @property (nonatomic,assign) int success;
+@property (weak, nonatomic) NSTimer *puzzleTimer;
+@property int timeInSeconds;
 
 @end
 

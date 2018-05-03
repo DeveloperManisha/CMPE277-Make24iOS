@@ -126,6 +126,9 @@
     //assign numbers
     [self generateRandomNumbers];
     [self clearEquationHandler:NULL];
+    _timeInSeconds=0;
+    _puzzleTimer = [self createTimer];
+    
     
 }
 
@@ -176,6 +179,29 @@
         hasSolution = [MakeNumber isValidSolution];
     }
     [self assignNumbers:n1 Number2:n2 Number3:n3 Number4:n4];
+}
+- (NSTimer *)createTimer {
+    return [NSTimer scheduledTimerWithTimeInterval:1.0
+                                            target:self
+                                          selector:@selector(clickedTimer:)
+                                          userInfo:nil
+                                           repeats:YES];
+}
+
+- (void)clickedTimer:(NSTimer *)timer {
+    
+    _timeInSeconds++;
+    [_timeLabel setText:[self getTime:_timeInSeconds]];
+    
+}
+- (NSString *)getTime:(int)tSeconds
+{
+    
+    int s = tSeconds % 60;
+    int m = (tSeconds / 60) % 60;
+    int h = tSeconds / 3600;
+    
+    return [NSString stringWithFormat:@"%d:%d:%d",h, m, s];
 }
 -(void)onSuccessReset{
     

@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="ykQ-Ii-qLO"/>
-                                    <barButtonItem title="Item" id="Ctf-vf-mbN"/>
-                                    <barButtonItem title="Item" id="3QX-oq-1Rd"/>
-                                    <barButtonItem title="Assign" width="94.5" id="e2q-IW-wsp">
+                                    <barButtonItem title="Clear" width="83" id="ykQ-Ii-qLO"/>
+                                    <barButtonItem title="Item" width="111" id="Ctf-vf-mbN"/>
+                                    <barButtonItem title="Item" width="149" id="3QX-oq-1Rd"/>
+                                    <barButtonItem title="Assign" width="217.5" id="e2q-IW-wsp">
                                         <connections>
                                             <segue destination="0R1-Vl-eRE" kind="presentation" id="fTy-lc-Hgc"/>
                                         </connections>
@@ -183,13 +183,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-dn-35B">
-                                <rect key="frame" x="296" y="150" width="67" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AE9-os-8U3">
                                 <rect key="frame" x="107" y="345" width="77" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -198,6 +191,13 @@
                                     <action selector="pressNumber1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="trf-sS-Dhk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-dn-35B">
+                                <rect key="frame" x="301" y="150" width="67" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
