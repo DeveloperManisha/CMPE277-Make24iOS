@@ -147,10 +147,13 @@
     {
         _success =_success + 1;
         [_successLabel setText:[NSString stringWithFormat:@"%d",_success ]];
+        NSString *succesString = [NSString stringWithFormat:@"%@",_equationHolderLabel.text ];
+        [self showSuccessDialog:succesString];
     }
     else{
         _attempt =_attempt + 1;
-         [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
+        [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
+        [self showErrorDialog:@"Incorrect Solution.PleaseTry again"];
     }
 }
 - (void)assignNumbers:(int) num1 Number2:(int)num2 Number3:(int)num3 Number4:(int)num4{
@@ -188,6 +191,36 @@
                                            repeats:YES];
 }
 
+-(void)showSuccessDialog:(NSString*)infoMessage{
+    UIAlertController* alert = [UIAlertController
+                                alertControllerWithTitle:@"Success"
+                                message:infoMessage
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction
+                                    actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction *action) {[self setNextPuzzle];}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+-(void)showErrorDialog:(NSString*)infoMessage{
+    UIAlertController* alert = [UIAlertController
+                                alertControllerWithTitle:@"Failure"
+                                message:infoMessage
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction
+                                    actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction *action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)setNextPuzzle{
+    
+}
 - (void)clickedTimer:(NSTimer *)timer {
     
     _timeInSeconds++;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84E10479209B97DC00DB75DA /* MakeNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E10478209B97DC00DB75DA /* MakeNumber.m */; };
+		84E1047C209BC68F00DB75DA /* AssignNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E1047B209BC68F00DB75DA /* AssignNumberViewController.m */; };
 		933A0B2A209640A400359CD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 933A0B29209640A400359CD4 /* AppDelegate.m */; };
 		933A0B2D209640A400359CD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933A0B2C209640A400359CD4 /* ViewController.m */; };
 		933A0B30209640A400359CD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933A0B2E209640A400359CD4 /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		84E10477209B97DC00DB75DA /* MakeNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeNumber.h; sourceTree = "<group>"; };
 		84E10478209B97DC00DB75DA /* MakeNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeNumber.m; sourceTree = "<group>"; };
+		84E1047A209BC68F00DB75DA /* AssignNumberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssignNumberViewController.h; sourceTree = "<group>"; };
+		84E1047B209BC68F00DB75DA /* AssignNumberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssignNumberViewController.m; sourceTree = "<group>"; };
 		933A0B25209640A400359CD4 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		933A0B28209640A400359CD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		933A0B29209640A400359CD4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				933A0B37209640A400359CD4 /* main.m */,
 				84E10477209B97DC00DB75DA /* MakeNumber.h */,
 				84E10478209B97DC00DB75DA /* MakeNumber.m */,
+				84E1047A209BC68F00DB75DA /* AssignNumberViewController.h */,
+				84E1047B209BC68F00DB75DA /* AssignNumberViewController.m */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				933A0B38209640A400359CD4 /* main.m in Sources */,
 				84E10479209B97DC00DB75DA /* MakeNumber.m in Sources */,
 				933A0B2A209640A400359CD4 /* AppDelegate.m in Sources */,
+				84E1047C209BC68F00DB75DA /* AssignNumberViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
