@@ -42,10 +42,45 @@
     [_equationHolderLabel setText:currentEq];
     
 }
+-(void)disableButton:(int) buttonText{
+    int n1 = [ [_Number1 titleForState:UIControlStateNormal] intValue];
+    if(n1 == buttonText)
+    {
+        [_Number1 setEnabled:true];
+    }
+    int n2 = [ [_Number2 titleForState:UIControlStateNormal] intValue];
+    if(n2 == buttonText)
+    {
+        [_Number2 setEnabled:true];
+    }
+    int n3 = [ [_Number3 titleForState:UIControlStateNormal] intValue];
+    if(n3 == buttonText)
+    {
+        [_Number3 setEnabled:true];
+    }
+    int n4 = [ [_Number4 titleForState:UIControlStateNormal] intValue];
+    if(n4 == buttonText)
+    {
+        [_Number4 setEnabled:true];
+    }
+    
+}
 - (IBAction)backspaceHandler:(UIButton*)sender {
     
     if([_equationHolder count]>0)
+    {
+        NSObject * obj =  [_equationHolder lastObject];
+        NSScanner *scanner = [NSScanner scannerWithString:[obj description]];
+        BOOL isNumeric = [scanner scanInteger:NULL] && [scanner isAtEnd];
+        if(isNumeric)
+        {
+            int currentNumber =  [[obj description] intValue];
+            [self disableButton:currentNumber];
+        }
+        
+        
         [_equationHolder removeLastObject];
+    }
     if([_equationHolder count]>0){
     NSMutableString * currentEq = [[NSMutableString alloc] init];
         for (NSObject * obj in _equationHolder)
@@ -109,6 +144,10 @@
     {
         _success =_success + 1;
         [_successLabel setText:[NSString stringWithFormat:@"%d",_success ]];
+    }
+    else{
+        _attempt =_attempt + 1;
+         [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
     }
 }
 - (void)assignNumbers:(int) num1 Number2:(int)num2 Number3:(int)num3 Number4:(int)num4{
