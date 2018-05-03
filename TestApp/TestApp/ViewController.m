@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MakeNumber.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,27 @@
     
     [_equationHolder addObject:sender.titleLabel.text];
     if(sender.tag == 15 || sender.tag == 16 || sender.tag == 17 || sender.tag == 18)
-    [sender setEnabled:false];
+    {
+        [sender setEnabled:false];
+        NSMutableString * currentEq = [[NSMutableString alloc] init];
+        for (NSObject * obj in _equationHolder)
+        {
+            [currentEq appendString:[obj description]];
+        }
+        [_equationHolderLabel setText:currentEq];
+    }
+    
+}
+- (IBAction)pressSign:(UIButton*)sender {
+    
+    [_equationHolder addObject:sender.titleLabel.text];
+   
+    NSMutableString * currentEq = [[NSMutableString alloc] init];
+    for (NSObject * obj in _equationHolder)
+    {
+        [currentEq appendString:[obj description]];
+    }
+    [_equationHolderLabel setText:currentEq];
     
 }
 - (IBAction)backspaceHandler:(UIButton*)sender {
@@ -41,7 +62,9 @@
     
 }
 - (IBAction)clearEquationHandler:(UIButton*)sender {
-    
+   
+    [_equationHolderLabel setText:@""];
+
     while([_equationHolder count]>0)
         [_equationHolder removeLastObject];
 }
@@ -64,6 +87,10 @@
     [_successLabel setText:[NSString stringWithFormat:@"%d",_success ]];
     [_skippedLabel setText:[NSString stringWithFormat:@"%d",_skipped ]];
     [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
+    
+    //assign numbers
+    [self generateRandomNumbers];
+    [self clearEquationHandler:NULL];
     
 }
 
@@ -107,10 +134,9 @@
         n4 = arc4random_uniform(9);
         if(n4 == 0)
             n4=1;
-        // hasSolution = component has solution
-    
+        hasSolution = [MakeNumber isValidSolution];
     }
-    
+    [self assignNumbers:n1 Number2:n2 Number3:n3 Number4:n4];
 }
 -(void)onSuccessReset{
     
