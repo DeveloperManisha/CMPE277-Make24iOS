@@ -76,6 +76,7 @@
         NSInteger row;
         row = [_numPicker1 selectedRowInComponent:0];
         [[vController assignedNumber] addObject:[numPickerData objectAtIndex:row]];
+        NSLog(@"The concatenated string is %@", [numPickerData objectAtIndex:row]);
         row = [_numPicker2 selectedRowInComponent:0];
         [[vController assignedNumber] addObject:[numPickerData objectAtIndex:row]];
         row = [_numPicker3 selectedRowInComponent:0];

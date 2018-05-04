@@ -123,7 +123,7 @@
     [_skippedLabel setText:[NSString stringWithFormat:@"%d",_skipped ]];
     [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
     
-    _assignedNumber = [[NSMutableArray alloc]init];
+   // _assignedNumber = [[NSMutableArray alloc]init];
     
     if(_isAssigned)
         [self setAssignedNumbers];
@@ -244,10 +244,11 @@
 }
 -(void)setAssignedNumbers{
     if([_assignedNumber count] > 0){
-    [_Number1 setTitle:[_assignedNumber objectAtIndex:0]  forState:UIControlStateNormal];
-    [_Number2 setTitle:[_assignedNumber objectAtIndex:1]  forState:UIControlStateNormal];
-    [_Number3 setTitle:[_assignedNumber objectAtIndex:2]  forState:UIControlStateNormal];
-    [_Number4 setTitle:[_assignedNumber objectAtIndex:3]  forState:UIControlStateNormal];
+        [_Number1 setTitle:[_assignedNumber objectAtIndex:0]  forState:UIControlStateNormal];
+        
+        [_Number2 setTitle:[_assignedNumber objectAtIndex:1]  forState:UIControlStateNormal];
+        [_Number3 setTitle:[_assignedNumber objectAtIndex:2]  forState:UIControlStateNormal];
+        [_Number4 setTitle:[_assignedNumber objectAtIndex:3]  forState:UIControlStateNormal];
     }
     
 }
