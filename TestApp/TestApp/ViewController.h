@@ -32,6 +32,8 @@
 @property (nonatomic,assign) int success;
 @property (weak, nonatomic) NSTimer *puzzleTimer;
 @property int timeInSeconds;
+@property (strong, nonatomic) NSMutableArray *assignedNumber;
+@property Boolean isAssigned;
 
 @end
 

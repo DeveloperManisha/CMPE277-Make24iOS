@@ -112,7 +112,7 @@
     _Number2.tag = 16;
     _Number3.tag = 17;
     _Number4.tag = 18;
-    
+    //_isAssigned = false;
     
     
     _equationHolder = [[NSMutableArray alloc]init];
@@ -123,8 +123,14 @@
     [_skippedLabel setText:[NSString stringWithFormat:@"%d",_skipped ]];
     [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
     
+    _assignedNumber = [[NSMutableArray alloc]init];
+    
+    if(_isAssigned)
+        [self setAssignedNumbers];
+    else
+        [self generateRandomNumbers];
     //assign numbers
-    [self generateRandomNumbers];
+    
     [self clearEquationHandler:NULL];
     _timeInSeconds=0;
     _puzzleTimer = [self createTimer];
@@ -236,7 +242,13 @@
     
     return [NSString stringWithFormat:@"%d:%d:%d",h, m, s];
 }
--(void)onSuccessReset{
+-(void)setAssignedNumbers{
+    if([_assignedNumber count] > 0){
+    [_Number1 setTitle:[_assignedNumber objectAtIndex:0]  forState:UIControlStateNormal];
+    [_Number2 setTitle:[_assignedNumber objectAtIndex:1]  forState:UIControlStateNormal];
+    [_Number3 setTitle:[_assignedNumber objectAtIndex:2]  forState:UIControlStateNormal];
+    [_Number4 setTitle:[_assignedNumber objectAtIndex:3]  forState:UIControlStateNormal];
+    }
     
 }
 @end

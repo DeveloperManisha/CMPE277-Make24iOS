@@ -248,23 +248,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-0j-3r0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Assign Numbers" id="Y4X-jl-TOq"/>
-                                </items>
-                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-BA-XDa">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Back" width="173" id="39i-E4-XRK">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="XUf-OH-07h"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainViewSegue" id="XUf-OH-07h"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Assign Numbers" id="JTh-Et-4Ic"/>
+                                    <barButtonItem title="Assign Numbers" id="JTh-Et-4Ic">
+                                        <connections>
+                                            <action selector="assignNumbers:" destination="0R1-Vl-eRE" id="6gW-z5-5Kt"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="assignSegue" id="HEj-bJ-rRQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBK-v9-Agx">
@@ -290,14 +288,30 @@
                                 <rect key="frame" x="25" y="121" width="66" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-0j-3r0">
+                                <rect key="frame" x="5" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Assign Numbers" id="Y4X-jl-TOq"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XQx-ow-1t2"/>
                     </view>
+                    <connections>
+                        <outlet property="numPicker1" destination="EOf-JL-KTO" id="1Kh-bt-SQO"/>
+                        <outlet property="numPicker2" destination="gBK-v9-Agx" id="9Ry-ne-USL"/>
+                        <outlet property="numPicker3" destination="vZb-h9-ItD" id="HzJ-0C-PwQ"/>
+                        <outlet property="numPicker4" destination="J7x-TE-dAW" id="gYS-ZR-M7h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uf-HK-Nyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.79999999999995" y="11.244377811094454"/>
+            <point key="canvasLocation" x="969" y="0.0"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HEj-bJ-rRQ"/>
+    </inferredMetricsTieBreakers>
 </document>
