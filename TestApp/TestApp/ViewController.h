@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "gameModel.h"
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *Number1;
@@ -32,8 +33,12 @@
 @property (nonatomic,assign) int success;
 @property (weak, nonatomic) NSTimer *puzzleTimer;
 @property int timeInSeconds;
-@property (strong, nonatomic) NSMutableArray *assignedNumber;
+@property (nonatomic,assign) int assignedNumber1;
+@property (nonatomic,assign) int assignedNumber2;
+@property (nonatomic,assign) int assignedNumber3;
+@property (nonatomic,assign) int assignedNumber4;
 @property Boolean isAssigned;
+@property (strong, nonatomic)gameModel* model;
 
 @end
 

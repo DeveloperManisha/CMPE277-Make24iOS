@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "MakeNumber.h"
 
-@interface ViewController ()
 
+@interface ViewController()
 @end
 
 @implementation ViewController
+
+
 
 - (IBAction)pressNumber1:(UIButton*)sender {
     
@@ -102,6 +104,10 @@
 
     while([_equationHolder count]>0)
         [_equationHolder removeLastObject];
+    [_Number1 setEnabled:true];
+    [_Number2 setEnabled:true];
+    [_Number3 setEnabled:true];
+    [_Number4 setEnabled:true];
 }
 
 - (void)viewDidLoad {
@@ -114,19 +120,26 @@
     _Number4.tag = 18;
     //_isAssigned = false;
     
+    _model = [gameModel getInstance];
     
     _equationHolder = [[NSMutableArray alloc]init];
-    _skipped = 0;
-    _attempt = 0;
-    _success = 0;
+    
+    [self loadValues];
+    /*_skipped = 0;
+    _attempt =0;
+    _success = 0;*/
     [_successLabel setText:[NSString stringWithFormat:@"%d",_success ]];
     [_skippedLabel setText:[NSString stringWithFormat:@"%d",_skipped ]];
     [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
     
+    
    // _assignedNumber = [[NSMutableArray alloc]init];
     
     if(_isAssigned)
+    {
         [self setAssignedNumbers];
+        _isAssigned = false;
+    }
     else
         [self generateRandomNumbers];
     //assign numbers
@@ -143,6 +156,48 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)loadValues{
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    NSString *key = @"success";
+    
+    if ([preferences objectForKey:key] == nil)
+    {
+        _success =0;
+        NSLog(@"The stored value is %d", _success);
+    }
+    else
+    {
+        //  Get current level
+        _success = [preferences integerForKey:key];
+        NSLog(@"The stored value is %d", _success);
+    }
+    
+    NSString *key1 = @"attempt";
+    
+    if ([preferences objectForKey:key1] == nil)
+    {
+        _attempt =0;
+    }
+    else
+    {
+        //  Get current level
+         _attempt= [preferences integerForKey:key1];
+    }
+    
+    NSString *key3 = @"skipped";
+    
+    if ([preferences objectForKey:key3] == nil)
+    {
+        _skipped =0;
+    }
+    else
+    {
+        //  Get current level
+        _skipped = [preferences integerForKey:key];
+    }
+    
+}
 - (IBAction)evaluateGameAttempt:(id)sender {
     
     
@@ -157,7 +212,7 @@
         [self showSuccessDialog:succesString];
     }
     else{
-        _attempt =_attempt + 1;
+        _attempt =_attempt +1;
         [_attemptLabel setText:[NSString stringWithFormat:@"%d",_attempt ]];
         [self showErrorDialog:@"Incorrect Solution.PleaseTry again"];
     }
@@ -172,6 +227,7 @@
 -(void)generateRandomNumbers{
     bool hasSolution = false;
     int n1,n2,n3,n4;
+    n1=0;n2=0;n3=0;n4=0;
     while(!hasSolution){
         n1 = arc4random_uniform(9);
         if(n1 == 0)
@@ -243,13 +299,59 @@
     return [NSString stringWithFormat:@"%d:%d:%d",h, m, s];
 }
 -(void)setAssignedNumbers{
-    if([_assignedNumber count] > 0){
-        [_Number1 setTitle:[_assignedNumber objectAtIndex:0]  forState:UIControlStateNormal];
-        
-        [_Number2 setTitle:[_assignedNumber objectAtIndex:1]  forState:UIControlStateNormal];
-        [_Number3 setTitle:[_assignedNumber objectAtIndex:2]  forState:UIControlStateNormal];
-        [_Number4 setTitle:[_assignedNumber objectAtIndex:3]  forState:UIControlStateNormal];
-    }
     
+        [_Number1 setTitle:[NSString stringWithFormat:@"%d",_assignedNumber1]forState:UIControlStateNormal];
+        
+        [_Number2 setTitle:[NSString stringWithFormat:@"%d",_assignedNumber2] forState:UIControlStateNormal];
+        [_Number3 setTitle:[NSString stringWithFormat:@"%d",_assignedNumber3] forState:UIControlStateNormal];
+        [_Number4 setTitle:[NSString stringWithFormat:@"%d",_assignedNumber4]  forState:UIControlStateNormal];
+    
+    
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:(BOOL)animated];    // Call the super class implementation.
+    // Usually calling super class implementation is done before self class implementation, but it's up to your application.
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    NSString *key = @"success";
+    
+    [preferences setInteger:_success forKey:key];
+    NSString *key1 = @"attempt";
+    
+    [preferences setInteger:_attempt forKey:key1];
+    NSString *key2 = @"skipped";
+    
+    [preferences setInteger:_skipped forKey:key2];
+    
+    //  Save
+    const BOOL didSave = [preferences synchronize];
+    
+    if (!didSave)
+    {
+    NSLog(@"The values didnt save");
+    }
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    NSString *key = @"success";
+    
+    [preferences setInteger:_success forKey:key];
+    NSString *key1 = @"attempt";
+    
+    [preferences setInteger:_attempt forKey:key1];
+    NSString *key2 = @"skipped";
+    
+    [preferences setInteger:_skipped forKey:key2];
+    
+    //  Save
+    const BOOL didSave = [preferences synchronize];
+    
+    if (!didSave)
+    {
+        NSLog(@"The values didnt save");
+    }
+    NSLog(@"prepared for segue");
 }
 @end

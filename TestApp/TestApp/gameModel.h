@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface gameModel : NSObject
-@property (strong, nonatomic) NSMutableArray *equationHolder;
-@property (nonatomic,assign) int attempt;
-@property (nonatomic,assign) int skipped;
-@property (nonatomic,assign) int success;
-@property (weak, nonatomic) NSTimer *puzzleTimer;
-@property int timeInSeconds;
-@property (strong, nonatomic) NSMutableArray *assignedNumber;
-@property Boolean isAssigned;
-
+@interface gameModel : NSObject{
+    @public
+    NSMutableArray *equationHolder;
+    int attempt;
+    @public
+    int skipped;
+    int success;
+    int timeInSeconds;
+    NSMutableArray *assignedNumber;
+    Boolean isAssigned;
+}
++(gameModel*)getInstance;
+-(int)getAttempt;
+-(void)setAttempt:(int)a;
 @end

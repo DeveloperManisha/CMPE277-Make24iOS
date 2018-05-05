@@ -75,14 +75,14 @@
         
         NSInteger row;
         row = [_numPicker1 selectedRowInComponent:0];
-        [[vController assignedNumber] addObject:[numPickerData objectAtIndex:row]];
+        vController.assignedNumber1=[[numPickerData objectAtIndex:row]intValue];
         NSLog(@"The concatenated string is %@", [numPickerData objectAtIndex:row]);
         row = [_numPicker2 selectedRowInComponent:0];
-        [[vController assignedNumber] addObject:[numPickerData objectAtIndex:row]];
+        vController.assignedNumber2=[[numPickerData objectAtIndex:row]intValue];
         row = [_numPicker3 selectedRowInComponent:0];
-        [[vController assignedNumber] addObject:[numPickerData objectAtIndex:row]];
+        vController.assignedNumber3=[[numPickerData objectAtIndex:row]intValue];
         row = [_numPicker4 selectedRowInComponent:0];
-        [[vController assignedNumber] addObject:[numPickerData objectAtIndex:row]];
+        vController.assignedNumber4=[[numPickerData objectAtIndex:row]intValue];
     }
 }
 
