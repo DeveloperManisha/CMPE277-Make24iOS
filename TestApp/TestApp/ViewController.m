@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  TestApp
-//
-//  Created by Siddheshwar Narke on 4/29/18.
-//  Copyright © 2018 Siddheshwar Narke. All rights reserved.
-//
-
 #import "ViewController.h"
 #import "MakeNumber24.h"
 
