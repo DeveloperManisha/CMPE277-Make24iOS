@@ -12,18 +12,24 @@
 - (IBAction)pressNumber1:(UIButton*)sender {
     [_doneButton setEnabled:true];
     
-    [_equationHolder addObject:sender.titleLabel.text];
-    if(sender.tag == 15 || sender.tag == 16 || sender.tag == 17 || sender.tag == 18)
+    NSObject * obj =  [_equationHolder lastObject];
+    NSScanner *scanner = [NSScanner scannerWithString:[obj description]];
+    BOOL isNumeric = [scanner scanInteger:NULL] && [scanner isAtEnd];
+    if(!isNumeric)
     {
-        [sender setEnabled:false];
-        NSMutableString * currentEq = [[NSMutableString alloc] init];
-        for (NSObject * obj in _equationHolder)
-        {
-            [currentEq appendString:[obj description]];
-        }
-        [_equationHolderLabel setText:currentEq];
-    }
     
+        [_equationHolder addObject:sender.titleLabel.text];
+        if(sender.tag == 15 || sender.tag == 16 || sender.tag == 17 || sender.tag == 18)
+        {
+            [sender setEnabled:false];
+            NSMutableString * currentEq = [[NSMutableString alloc] init];
+            for (NSObject * obj in _equationHolder)
+            {
+                [currentEq appendString:[obj description]];
+            }
+            [_equationHolderLabel setText:currentEq];
+        }
+    }
 }
 - (IBAction)pressSign:(UIButton*)sender {
     [_doneButton setEnabled:true];
@@ -290,7 +296,7 @@
 -(void)showSuccessDialog:(NSString*)infoMessage{
     UIAlertController* alert = [UIAlertController
                                 alertControllerWithTitle:@"Success"
-                                message:infoMessage
+                                message:[NSString stringWithFormat:@"Binggo! %@ =24",infoMessage]
                                 preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction
