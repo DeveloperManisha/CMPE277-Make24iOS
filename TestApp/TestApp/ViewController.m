@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MakeNumber.h"
+#import "MakeNumber24.h"
 
 
 @interface ViewController()
@@ -18,6 +18,7 @@
 
 
 - (IBAction)pressNumber1:(UIButton*)sender {
+    [_doneButton setEnabled:true];
     
     [_equationHolder addObject:sender.titleLabel.text];
     if(sender.tag == 15 || sender.tag == 16 || sender.tag == 17 || sender.tag == 18)
@@ -33,6 +34,7 @@
     
 }
 - (IBAction)pressSign:(UIButton*)sender {
+    [_doneButton setEnabled:true];
     
     [_equationHolder addObject:sender.titleLabel.text];
    
@@ -94,14 +96,27 @@
     }
     else{
         [_equationHolderLabel setText:@""];
+        [_doneButton setEnabled:false];
     }
         
     
 }
-- (IBAction)clearEquationHandler:(UIButton*)sender {
-   
+-(void)showSloutionDialog:(NSString*)infoMessage{
+    UIAlertController* alert = [UIAlertController
+                                alertControllerWithTitle:@"Solution"
+                                message:infoMessage
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction
+                                    actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction *action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+- (IBAction)Clear:(id)sender {
     [_equationHolderLabel setText:@""];
-
+    [_doneButton setEnabled:false];
     while([_equationHolder count]>0)
         [_equationHolder removeLastObject];
     [_Number1 setEnabled:true];
@@ -109,7 +124,32 @@
     [_Number3 setEnabled:true];
     [_Number4 setEnabled:true];
 }
-
+- (IBAction)Skip:(id)sender {
+    _skipped = _skipped + 1;
+    [_skippedLabel setText:[NSString stringWithFormat:@"%d",_skipped ]];
+    [self Clear:nil];
+     [self generateRandomNumbers];
+   
+}
+- (IBAction)ShowSolution:(id)sender {
+   
+    
+    _skipped = _skipped + 1;
+    [_skippedLabel setText:[NSString stringWithFormat:@"%d",_skipped ]];
+    [self generateRandomNumbers];
+    // get solution
+    NSString *solution =@"Sorry,No Solutions exists";
+    Boolean isSolution =[MakeNumber24 hasSolution:[_Number1.titleLabel.text intValue] :[_Number2.titleLabel.text intValue] :[_Number3.titleLabel.text intValue] :[_Number4.titleLabel.text intValue]];
+    if(isSolution)
+    {
+        solution = [MakeNumber24 getSolution:[_Number1.titleLabel.text intValue] :[_Number2.titleLabel.text intValue] :[_Number3.titleLabel.text intValue] :[_Number4.titleLabel.text intValue]];
+        [self showSloutionDialog:solution];
+    }
+    else
+        [self showSloutionDialog:solution];
+        
+        
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -121,7 +161,7 @@
     //_isAssigned = false;
     
     _model = [gameModel getInstance];
-    
+    [_doneButton setEnabled:false];
     _equationHolder = [[NSMutableArray alloc]init];
     
     [self loadValues];
@@ -144,7 +184,7 @@
         [self generateRandomNumbers];
     //assign numbers
     
-    [self clearEquationHandler:NULL];
+    [self Clear:NULL];
     _timeInSeconds=0;
     _puzzleTimer = [self createTimer];
     
@@ -210,6 +250,8 @@
         [_successLabel setText:[NSString stringWithFormat:@"%d",_success ]];
         NSString *succesString = [NSString stringWithFormat:@"%@",_equationHolderLabel.text ];
         [self showSuccessDialog:succesString];
+        [self Clear:nil];
+        [self generateRandomNumbers];
     }
     else{
         _attempt =_attempt +1;
@@ -241,7 +283,7 @@
         n4 = arc4random_uniform(9);
         if(n4 == 0)
             n4=1;
-        hasSolution = [MakeNumber isValidSolution];
+        hasSolution = [MakeNumber24 hasSolution:n1 :n2 :n3 :n4];
     }
     [self assignNumbers:n1 Number2:n2 Number3:n3 Number4:n4];
 }

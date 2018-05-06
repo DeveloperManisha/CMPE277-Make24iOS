@@ -21,152 +21,195 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-xS-mhP">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem title="Clear" width="83" id="ykQ-Ii-qLO"/>
-                                    <barButtonItem title="Item" width="111" id="Ctf-vf-mbN"/>
-                                    <barButtonItem title="Item" width="149" id="3QX-oq-1Rd"/>
-                                    <barButtonItem title="Assign" width="217.5" id="e2q-IW-wsp">
+                                    <barButtonItem title="Clear" image="icons8-delete-filled-50" width="83" id="ykQ-Ii-qLO">
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="Clear:" destination="BYZ-38-t0r" id="tyb-Gq-ssa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="icons8-end-filled-50" width="111" id="Ctf-vf-mbN">
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="Skip:" destination="BYZ-38-t0r" id="yxx-DC-lub"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="icons8-key-filled-50" width="149" id="3QX-oq-1Rd">
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="ShowSolution:" destination="BYZ-38-t0r" id="LuU-JS-hH8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Assign" image="icons8-edit-row-filled-50" width="217.5" id="e2q-IW-wsp">
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="0R1-Vl-eRE" kind="presentation" id="fTy-lc-Hgc"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wm-Rs-3jB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Make24" id="9Mc-3T-ol8"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acX-yp-plB">
                                 <rect key="frame" x="10" y="230.5" width="350" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.040410431338028172" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97973416087591103" green="0.96566950499000426" blue="0.0061876080003957293" alpha="0.28759096746575341" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="DgM-tr-Dhx"/>
                                     <constraint firstAttribute="height" constant="60" id="zbd-iM-8yP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="1" blue="1" alpha="0.5043188820422535" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JU-jB-24W">
                                 <rect key="frame" x="10" y="308" width="80" height="120"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.050674229452054798" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="7zn-HC-pU6"/>
                                     <constraint firstAttribute="height" constant="120" id="eD0-Zs-J3L"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressNumber1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wqi-Ij-7Qm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-ui-dBF">
                                 <rect key="frame" x="190" y="308" width="80" height="120"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.044707833904109588" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="PaF-UL-NXe"/>
                                     <constraint firstAttribute="height" constant="120" id="YmA-jA-eQ8"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressNumber1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z3P-ar-LtK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a0-iY-zwA">
                                 <rect key="frame" x="280" y="308" width="80" height="120"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.038794948630136987" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="PHp-LS-PHz"/>
                                     <constraint firstAttribute="width" constant="80" id="co3-Ol-EXJ"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressNumber1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Kx-Rz-V7z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5z8-Kc-n8J">
                                 <rect key="frame" x="10" y="436" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.053269477739726026" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Hsk-zE-enG"/>
                                     <constraint firstAttribute="height" constant="90" id="QpY-tY-jF1"/>
                                 </constraints>
-                                <state key="normal" title="+"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pme-L6-7bE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0V-4b-QiX">
                                 <rect key="frame" x="282" y="436" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.057336258561643837" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="f4T-NY-F0j"/>
                                     <constraint firstAttribute="height" constant="90" id="vAh-pP-1Kn"/>
                                 </constraints>
-                                <state key="normal" title="/"/>
+                                <state key="normal" title="/">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VgU-Pa-cA1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN9-s1-U3o">
                                 <rect key="frame" x="190" y="436" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.055543664383561647" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Ff1-G9-WLz"/>
                                     <constraint firstAttribute="height" constant="90" id="Opy-KR-WbH"/>
                                 </constraints>
-                                <state key="normal" title="*"/>
+                                <state key="normal" title="*">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKT-zz-yYt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUK-ve-ECT">
                                 <rect key="frame" x="100" y="436" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.047918450342465752" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="3nG-5b-ShS"/>
                                     <constraint firstAttribute="width" constant="80" id="Q5w-BD-3Ad"/>
                                 </constraints>
-                                <state key="normal" title="-"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UaS-EM-WA3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enn-P2-R6j">
                                 <rect key="frame" x="98" y="531" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.075690282534246575" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="ITM-am-Va4"/>
                                     <constraint firstAttribute="height" constant="90" id="d2M-ji-SnB"/>
                                 </constraints>
-                                <state key="normal" title=")"/>
+                                <state key="normal" title=")">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pl1-3Q-Ety"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCD-5T-Dyi">
                                 <rect key="frame" x="190" y="531" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.05760380993150685" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="82X-Dv-YuJ"/>
                                     <constraint firstAttribute="width" constant="80" id="UOs-ok-B8r"/>
                                 </constraints>
-                                <state key="normal" title="&lt;-"/>
+                                <state key="normal" title="&lt;-">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backspaceHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqM-TX-OUk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-Pi-myy">
                                 <rect key="frame" x="10" y="531" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.061804366438356163" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="HB5-JB-oEx"/>
                                     <constraint firstAttribute="width" constant="80" id="te2-68-7zf"/>
                                 </constraints>
-                                <state key="normal" title="("/>
+                                <state key="normal" title="(">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQV-S3-nQk"/>
                                 </connections>
@@ -178,7 +221,7 @@
                                     <constraint firstAttribute="width" constant="80" id="ad1-64-gYf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-uC-lJv">
@@ -189,7 +232,7 @@
                                     <constraint firstAttribute="width" constant="80" id="hvc-0X-cU6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uP-vq-Pfn">
@@ -199,7 +242,7 @@
                                     <constraint firstAttribute="width" constant="80" id="4de-wO-dek"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVk-cs-FuZ">
@@ -209,7 +252,7 @@
                                     <constraint firstAttribute="width" constant="80" id="aYn-Gk-CQv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-nT-WYa">
@@ -219,7 +262,7 @@
                                     <constraint firstAttribute="height" constant="60" id="Ous-mI-scs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKa-7t-SSD">
@@ -229,7 +272,7 @@
                                     <constraint firstAttribute="height" constant="60" id="U75-iy-fZO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldl-6O-36L">
@@ -239,17 +282,19 @@
                                     <constraint firstAttribute="width" constant="80" id="tLR-jg-r61"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AE9-os-8U3">
                                 <rect key="frame" x="100" y="308" width="80" height="120"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.048346532534246575" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="6VJ-74-tTr"/>
                                     <constraint firstAttribute="height" constant="120" id="Re5-op-iCF"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pressNumber1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="trf-sS-Dhk"/>
                                 </connections>
@@ -261,23 +306,25 @@
                                     <constraint firstAttribute="height" constant="60" id="mrU-hr-HWP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZg-aY-UwG">
                                 <rect key="frame" x="282" y="531" width="80" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.057737585616438353" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="IkJ-n2-hDH"/>
                                     <constraint firstAttribute="width" constant="80" id="gCx-L2-fcs"/>
                                 </constraints>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="evaluateGameAttempt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dUI-EJ-eP6"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1a0-iY-zwA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="34.5" id="0B9-jI-ZAa"/>
                             <constraint firstItem="ldl-6O-36L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-160.5" id="0Hv-ra-Ri3"/>
@@ -366,22 +413,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-0j-3r0">
+                                <rect key="frame" x="5" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Assign Numbers" id="Y4X-jl-TOq"/>
+                                </items>
+                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-BA-XDa">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Back" width="173" id="39i-E4-XRK">
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainViewSegue" id="XUf-OH-07h"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Assign Numbers" id="JTh-Et-4Ic">
+                                    <barButtonItem title="Assign Numbers" width="314.5" id="JTh-Et-4Ic">
+                                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="assignNumbers:" destination="0R1-Vl-eRE" id="6gW-z5-5Kt"/>
                                             <segue destination="BYZ-38-t0r" kind="presentation" identifier="assignSegue" id="HEj-bJ-rRQ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBK-v9-Agx">
                                 <rect key="frame" x="99" y="121" width="63" height="162"/>
@@ -395,24 +452,18 @@
                                 <rect key="frame" x="286" y="121" width="73" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Numbers for your game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TT-4P-1PX">
-                                <rect key="frame" x="25" y="66" width="334" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOf-JL-KTO">
                                 <rect key="frame" x="25" y="121" width="66" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-0j-3r0">
-                                <rect key="frame" x="5" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Assign Numbers" id="Y4X-jl-TOq"/>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Numbers for your game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TT-4P-1PX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XQx-ow-1t2"/>
@@ -426,9 +477,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uf-HK-Nyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="0.0"/>
+            <point key="canvasLocation" x="968.79999999999995" y="-0.44977511244377816"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-delete-filled-50" width="50" height="50"/>
+        <image name="icons8-edit-row-filled-50" width="50" height="50"/>
+        <image name="icons8-end-filled-50" width="50" height="50"/>
+        <image name="icons8-key-filled-50" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HEj-bJ-rRQ"/>
     </inferredMetricsTieBreakers>
